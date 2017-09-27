@@ -20,12 +20,7 @@ class CreateBooksTable extends Migration
                 $table->string('image_url')->nullable();
                 $table->text('description')->nullable();
                 $table->integer('author_id')->unsigned();
-                $table->foreign('author_id')->references('id')->on('authors')
-                    ->onDelete('cascade')
-                    ->onUpdate('cascade');
-                $table->foreign('category_id')->references('id')->on('categories')
-                    ->onDelete('cascade')
-                    ->onUpdate('cascade');
+                $table->integer('category_id')->unsigned();
                 $table->timestamps();
             });
         }

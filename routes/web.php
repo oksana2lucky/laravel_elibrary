@@ -11,19 +11,7 @@
 |
 */
 
-// Provide controller methods with object instead of ID
-//Route::model('author', 'Author');
-//Route::model('book', 'Book');
-
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::resource('authors', 'AuthorController');
-Route::resource('books', 'BookController');
-
-
-
+Route::get('/', 'IndexController@index');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
+Route::get('/book/view/{id}', 'BookController@view');
