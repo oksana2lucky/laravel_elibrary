@@ -15,7 +15,7 @@
         <img width="100" height="150" src="{{ $book->image_url }}" alt="image" />
         <div class="product_info">
             <h3>{{ $book->author }}</h3>
-            <p>{{ $description }}...</p>
+            <p>{{ DataHelper::getAbridgment($description, 100) }}...</p>
             <div class="detail_button"><a href="{{ url('/book/view/'.$book->id) }}">Detail</a></div>
         </div>
         <div class="cleaner">&nbsp;</div>
